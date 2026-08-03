@@ -1,0 +1,24 @@
+<?php
+/**
+ * Le Sceau — motif signature du cabinet.
+ * $class détermine la taille via CSS (seal-mini, mini-seal, seal-stamp).
+ */
+$class = $class ?? 'seal-mini';
+?>
+<svg class="<?php echo htmlspecialchars($class); ?>" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sceau du Cabinet Maître TAWET">
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#A63A2E" stroke-width="3"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#A63A2E" stroke-width="1"/>
+  <path id="sealArcTop" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
+  <path id="sealArcBottom" d="M 170 100 A 70 70 0 0 1 30 100" fill="none"/>
+  <text font-family="IBM Plex Mono, monospace" font-size="11.5" letter-spacing="3" fill="#A63A2E">
+    <textPath href="#sealArcTop" startOffset="50%" text-anchor="middle">CABINET MAÎTRE TAWET</textPath>
+  </text>
+  <text font-family="IBM Plex Mono, monospace" font-size="11.5" letter-spacing="3" fill="#A63A2E">
+    <textPath href="#sealArcBottom" startOffset="50%" text-anchor="middle">BARREAU DU CAMEROUN</textPath>
+  </text>
+  <g transform="translate(100,100)">
+    <line x1="-34" y1="-8" x2="34" y2="-8" stroke="#A63A2E" stroke-width="2"/>
+    <line x1="-34" y1="8" x2="34" y2="8" stroke="#A63A2E" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Fraunces, serif" font-size="30" font-weight="600" fill="#A63A2E">T</text>
+  </g>
+</svg>

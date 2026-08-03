@@ -1,0 +1,126 @@
+<?php
+$pageTitle = 'Le Cabinet';
+$pageDescription = "Présentation du Cabinet Maître TAWET, cabinet d'avocats à Bertoua : valeurs, méthode et engagement envers les clients.";
+require __DIR__ . '/includes/header.php';
+?>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/index.php">Accueil</a> / Le Cabinet</div>
+    <h1>Le Cabinet</h1>
+    <p class="lead" style="color:rgba(243,238,230,0.75);">Un cabinet d'avocats à taille humaine, ancré à Bertoua, pensé pour un accompagnement juridique direct et exigeant.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap attorney-block">
+    <div class="attorney-photo">
+      <img src="/assets/img/IMG-20260428-WA0031.jpg" alt="Me Ngo Diyani J. épouse Tawet" />
+    </div>
+    <div>
+      <div class="eyebrow">Présentation</div>
+      <h2>Une pratique de proximité, une exigence de fond</h2>
+      <p>Le Cabinet Maître TAWET est dirigé par Me Ngo Diyani J. épouse Tawet, avocate inscrite au Barreau du Cameroun et installée à Bertoua. Le cabinet accompagne une clientèle diverse — particuliers, familles, commerçants, PME et institutions — sur l'ensemble des branches du droit.</p>
+      <p>Loin d'une approche standardisée, chaque dossier fait l'objet d'une analyse individuelle : le cabinet privilégie une communication claire, des délais tenus et une disponibilité réelle, y compris par téléphone et WhatsApp pour les urgences.</p>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="reveal">
+  <div class="wrap">
+    <div class="section-image" style="background-image:url('/assets/img/IMG-20260428-WA0038.jpg');"></div>
+  </div>
+</section> -->
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Le cabinet en images</div>
+      <h2>Espaces et ambiance du cabinet</h2>
+      <p class="lead">Six photographies illustrent les espaces de travail, l’accueil et l’atmosphère du cabinet à Bertoua.</p>
+    </div>
+    <div class="gallery-grid">
+      <article class="gallery-item">
+        <img src="/assets/img/IMG-20260428-WA0038.jpg" alt="Façade du cabinet" />
+        <div class="gallery-overlay">Façade du cabinet</div>
+      </article>
+      <article class="gallery-item">
+        <img src="/assets/img/IMG-20260428-WA0039.jpg" alt="Accueil et salle d’attente" />
+        <div class="gallery-overlay">Accueil et salle d’attente</div>
+      </article>
+      <article class="gallery-item">
+        <img src="/assets/img/IMG-20260428-WA0040.jpg" alt="Bureau de consultation" />
+        <div class="gallery-overlay">Bureau de consultation</div>
+      </article>
+      <article class="gallery-item">
+        <img src="/assets/img/IMG-20260428-WA0041.jpg" alt="Espace de réunion" />
+        <div class="gallery-overlay">Espace de réunion</div>
+      </article>
+      <article class="gallery-item">
+        <img src="/assets/img/IMG-20260428-WA0042.jpg" alt="Archives et documents" />
+        <div class="gallery-overlay">Archives et dossiers</div>
+      </article>
+      <article class="gallery-item">
+        <img src="/assets/img/IMG-20260428-WA0043.jpg" alt="Ambiance du cabinet" />
+        <div class="gallery-overlay">Ambiance du cabinet</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band-paper-dim reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Valeurs</div>
+      <h2>Ce qui guide chaque dossier</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <span class="num">—</span>
+        <h3>Rigueur</h3>
+        <p>Une lecture précise des textes et une préparation minutieuse de chaque pièce du dossier.</p>
+      </div>
+      <div class="card">
+        <span class="num">—</span>
+        <h3>Clarté</h3>
+        <p>Des explications accessibles, sans jargon inutile, pour que chaque client comprenne sa situation.</p>
+      </div>
+      <div class="card">
+        <span class="num">—</span>
+        <h3>Disponibilité</h3>
+        <p>Des réponses rapides, un suivi régulier, et une écoute attentive à chaque étape.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-dark reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Engagement</div>
+      <h2 style="color:var(--paper);">Auprès de qui intervient le cabinet</h2>
+    </div>
+    <div class="grid-2" style="background:transparent; border:none;">
+      <div class="card" style="background:var(--forest); color:var(--paper);">
+        <h3 style="color:var(--paper);">Particuliers &amp; familles</h3>
+        <p style="color:rgba(243,238,230,0.75);">Conseil et représentation en droit de la famille, droit foncier, droit pénal et litiges du quotidien.</p>
+      </div>
+      <div class="card" style="background:var(--forest); color:var(--paper);">
+        <h3 style="color:var(--paper);">Entreprises &amp; commerçants</h3>
+        <p style="color:rgba(243,238,230,0.75);">Formalisation d'activité, contrats, recouvrement, droit du travail et contentieux commercial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band reveal">
+  <div class="wrap">
+    <h2>Envie d'échanger sur votre situation ?</h2>
+    <div class="cta-actions">
+      <a href="/rendez-vous.php" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="/equipe.php" class="btn btn-ghost">Voir l'équipe</a>
+    </div>
+  </div>
+</section>
+
+<?php require __DIR__ . '/includes/footer.php'; ?>
