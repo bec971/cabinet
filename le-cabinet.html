@@ -1,12 +1,20 @@
-<?php
-$pageTitle = 'Le Cabinet';
-$pageDescription = "Présentation du Cabinet Maître TAWET, cabinet d'avocats à Bertoua : valeurs, méthode et engagement envers les clients.";
-require __DIR__ . '/includes/header.php';
-?>
-
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Cabinet — Cabinet Maître TAWET</title>
+<meta name="description" content="Présentation du Cabinet Maître TAWET, cabinet d'avocats à Bertoua : valeurs, méthode et engagement envers les clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
 <section class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="/index.php">Accueil</a> / Le Cabinet</div>
+    <div class="breadcrumb"><a href="/index.html">Accueil</a> / Le Cabinet</div>
     <h1>Le Cabinet</h1>
     <p class="lead" style="color:rgba(243,238,230,0.75);">Un cabinet d'avocats à taille humaine, ancré à Bertoua, pensé pour un accompagnement juridique direct et exigeant.</p>
   </div>
@@ -117,10 +125,12 @@ require __DIR__ . '/includes/header.php';
   <div class="wrap">
     <h2>Envie d'échanger sur votre situation ?</h2>
     <div class="cta-actions">
-      <a href="/rendez-vous.php" class="btn btn-primary">Prendre rendez-vous</a>
-      <a href="/equipe.php" class="btn btn-ghost">Voir l'équipe</a>
+      <a href="/rendez-vous.html" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="/equipe.html" class="btn btn-ghost">Voir l'équipe</a>
     </div>
   </div>
 </section>
-
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<div data-site-footer></div>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

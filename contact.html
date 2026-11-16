@@ -1,13 +1,20 @@
-<?php
-$pageTitle = 'Contact & Rendez-vous';
-$pageDescription = "Contactez le Cabinet Maître TAWET à Bertoua — e-mail, téléphone, WhatsApp. Pour un contact général ou un rendez-vous.";
-require __DIR__ . '/includes/header.php';
-$statut = $_GET['statut'] ?? '';
-?>
-
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Rendez-vous — Cabinet Maître TAWET</title>
+<meta name="description" content="Contactez le Cabinet Maître TAWET à Bertoua — e-mail, téléphone, WhatsApp. Pour un contact général ou un rendez-vous.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
 <section class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="/index.php">Accueil</a> / Contact</div>
+    <div class="breadcrumb"><a href="/index.html">Accueil</a> / Contact</div>
     <h1>Contact & Rendez-vous</h1>
     <p class="lead" style="color:rgba(243,238,230,0.75);">Une question, un dossier à évoquer ou un rendez-vous à fixer ? Utilisez le formulaire de droite et retrouvez-nous sur la carte.</p>
   </div>
@@ -22,9 +29,9 @@ $statut = $_GET['statut'] ?? '';
       <div class="contact-details">
         <div class="contact-box">
           <h4>Coordonnées</h4>
-          <p><?php echo SITE_CITY; ?></p>
-          <p><a href="mailto:<?php echo SITE_CONTACT_EMAIL; ?>"><?php echo SITE_CONTACT_EMAIL; ?></a></p>
-          <p><a href="<?php echo wa_link('Bonjour, je souhaite prendre contact avec le Cabinet Maître TAWET.'); ?>" target="_blank" rel="noopener"><?php echo SITE_WHATSAPP_DISPLAY; ?></a></p>
+          <p>Bertoua, Région de l’Est, Cameroun</p>
+          <p><a href="mailto:tchamgadaniel@gamil.com">tchamgadaniel@gamil.com</a></p>
+          <p><a href="https://wa.me/237659502036?text=Bonjour%2C%20je%20souhaite%20prendre%20contact%20avec%20le%20Cabinet%20Ma%C3%AEtre%20TAWET." target="_blank" rel="noopener">+237 659 502 036</a></p>
         </div>
         <div class="contact-box">
           <h4>Services</h4>
@@ -37,17 +44,13 @@ $statut = $_GET['statut'] ?? '';
       </div>
     </div>
 
-    <div class="form-panel">
+    <div class="form-panel" id="formulaire">
       <div class="eyebrow">Formulaire de contact & rendez-vous</div>
       <h2>Écrivez-nous</h2>
 
-      <?php if ($statut === 'champs-manquants'): ?>
-        <div class="alert alert-error">Merci de renseigner votre nom, un e-mail valide et votre message avant l'envoi.</div>
-      <?php elseif ($statut === 'erreur'): ?>
-        <div class="alert alert-error">Une erreur est survenue. Merci de réessayer ou de nous écrire directement par WhatsApp.</div>
-      <?php endif; ?>
+      
 
-      <form action="/includes/send-mail.php" method="POST">
+      <form id="contact-form">
         <input type="hidden" name="form_type" value="contact">
         <input type="text" name="site_web" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off">
 
@@ -75,10 +78,12 @@ $statut = $_GET['statut'] ?? '';
         </div>
 
         <button type="submit" class="btn btn-primary" style="margin-top:24px;">Envoyer le message</button>
-        <p class="form-note">Après l'envoi, vous serez redirigé vers WhatsApp pour confirmer votre demande directement auprès du cabinet.</p>
+        <p class="form-note">Votre application WhatsApp s’ouvrira avec votre message prêt à envoyer. Aucun e-mail n’est envoyé automatiquement depuis ce site statique.</p>
       </form>
     </div>
   </div>
 </section>
-
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<div data-site-footer></div>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

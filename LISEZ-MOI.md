@@ -1,35 +1,25 @@
-# Cabinet Maître TAWET — Site web
+# Cabinet Maître TAWET — Site web statique
 
-## Ce que contient ce dossier
+## Contenu
 
-- `index.php`, `le-cabinet.php`, `competences.php`, `equipe.php`, `actualites.php`, `actualite.php`, `contact.php`, `rendez-vous.php` — les pages du site.
-- `includes/` — en-tête, pied de page, configuration, sceau (SVG), et `send-mail.php` (le backend des formulaires).
-- `assets/` — CSS, JS.
+- Pages du site : `index.html`, `le-cabinet.html`, `competences.html`, `equipe.html`, `actualites.html`, `actualite.html`, `contact.html` et `rendez-vous.html`.
+- `assets/css/` contient les styles; `assets/js/main.js` gère la navigation, les actualités, les domaines et les formulaires.
+- `assets/img/` contient les images du site et le sceau SVG.
 
-## Installation sur un hébergement PHP
+## Hébergement
 
-1. Copier tout le contenu de ce dossier à la racine de l'hébergement (le dossier qui contient `index.php` doit être la racine du domaine, ou du sous-dossier).
-2. L'hébergement doit supporter **PHP 8** et avoir la fonction `mail()` activée (c'est le cas de la quasi-totalité des hébergements mutualisés : o2switch, Hostinger, OVH, etc.). Sans cela, l'e-mail ne partira pas, mais le site continuera de fonctionner et la redirection WhatsApp restera active.
-3. Vérifier/adapter les informations de contact dans `includes/config.php` :
-   - `SITE_CONTACT_EMAIL` — adresse qui reçoit les messages du site.
-   - `SITE_WHATSAPP_NUMBER` — numéro WhatsApp (indicatif 237 inclus, sans le +).
+Le site ne nécessite ni PHP ni base de données. Déposez le contenu du dossier à la racine d'un hébergement de fichiers statiques. Les chemins commencent par `/`, le site doit donc être servi à la racine du domaine ou d'un sous-domaine.
 
-## ⚠️ À vérifier avant mise en ligne
+Pour un essai local, démarrez un serveur statique depuis ce dossier, par exemple avec `python3 -m http.server 8000`, puis ouvrez `http://localhost:8000`. JavaScript doit être activé pour afficher le menu commun, les listes d'articles et les pages détaillées.
 
-L'adresse e-mail actuellement configurée est `tchamgadaniel@gamil.com`.
-**"gamil.com" ressemble à une faute de frappe pour "gmail.com".** Si c'est le cas,
-corrige-la dans `includes/config.php` (ligne `SITE_CONTACT_EMAIL`), sinon aucun
-e-mail de contact ne pourra jamais être livré.
+## Formulaires
 
-## Comment fonctionne le formulaire
+Le formulaire ne peut pas envoyer d'e-mail sans backend. Après validation, il ouvre WhatsApp avec le message prérempli; la personne doit confirmer l'envoi dans WhatsApp. Le numéro et l'adresse e-mail affichée se trouvent au début de `assets/js/main.js`.
 
-1. Le visiteur remplit le formulaire (Contact ou Rendez-vous).
-2. `includes/send-mail.php` valide les champs, envoie un e-mail à `SITE_CONTACT_EMAIL`.
-3. Le visiteur est automatiquement redirigé vers une conversation WhatsApp
-   pré-remplie avec `SITE_WHATSAPP_NUMBER`, pour confirmer sa demande immédiatement.
+L'adresse configurée est actuellement `tchamgadaniel@gamil.com`. Vérifiez si `gamil.com` est bien voulu ou s'il faut le remplacer par `gmail.com` avant publication.
 
 ## Contenu à personnaliser
 
-- Les articles d'actualité (`includes/articles-data.php`) sont des exemples à remplacer par du contenu réel.
-- Les textes de présentation peuvent être ajustés dans chaque page `.php`.
-- Le fond de carte dans `contact.php` utilise OpenStreetMap ; les coordonnées peuvent être ajustées une fois l'adresse exacte du cabinet confirmée.
+- Les articles et domaines d'intervention sont définis au début de `assets/js/main.js`.
+- Les textes des pages sont dans les fichiers HTML correspondants.
+- La carte OpenStreetMap et ses coordonnées se trouvent dans `contact.html`.

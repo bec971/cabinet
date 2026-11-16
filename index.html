@@ -1,9 +1,17 @@
-<?php
-$pageTitle = 'Accueil';
-$pageDescription = "Cabinet Maître TAWET — avocate au Barreau du Cameroun, à Bertoua. Conseil et défense en droit des affaires, droit foncier, droit de la famille et droit pénal.";
-require __DIR__ . '/includes/header.php';
-?>
-
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil — Cabinet Maître TAWET</title>
+<meta name="description" content="Cabinet Maître TAWET — avocate au Barreau du Cameroun, à Bertoua. Conseil et défense en droit des affaires, droit foncier, droit de la famille et droit pénal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
 <section class="hero">
   <div class="wrap">
     <div>
@@ -11,8 +19,8 @@ require __DIR__ . '/includes/header.php';
       <h1>Le droit, <em>lu</em> avec exactitude. La défense, <em>menée</em> avec constance.</h1>
       <p class="lead">Le Cabinet Maître TAWET accompagne particuliers, familles et entreprises de la région de l'Est dans leurs démarches juridiques — du conseil préventif jusqu'à la représentation devant les juridictions.</p>
       <div class="hero-cta">
-        <a href="/rendez-vous.php" class="btn btn-primary">Prendre rendez-vous</a>
-        <a href="/competences.php" class="btn btn-outline-light">Voir les domaines d'intervention</a>
+        <a href="/rendez-vous.html" class="btn btn-primary">Prendre rendez-vous</a>
+        <a href="/competences.html" class="btn btn-outline-light">Voir les domaines d'intervention</a>
       </div>
       <div class="hero-figures">
         <div><strong>06</strong><span>Domaines d'intervention</span></div>
@@ -21,7 +29,7 @@ require __DIR__ . '/includes/header.php';
       </div>
     </div>
     <div class="seal-stamp-wrap">
-      <?php $class = 'seal-stamp'; require __DIR__ . '/includes/seal.php'; ?>
+      <img class="seal-stamp" src="/assets/img/seal.svg" alt="Sceau du Cabinet Maître TAWET">
     </div>
   </div>
 </section>
@@ -38,7 +46,7 @@ require __DIR__ . '/includes/header.php';
       <blockquote>« Chaque dossier mérite la même rigueur, qu'il s'agisse d'un litige de voisinage ou d'un contentieux commercial d'envergure. »</blockquote>
       <cite>Me Ngo Diyani J. épouse Tawet — Avocate au Barreau du Cameroun</cite>
       <p style="margin-top:22px;">Installée à Bertoua, Maître Tawet met son expérience du contentieux et sa connaissance du tissu économique et foncier local au service d'une clientèle exigeante, en français comme en anglais.</p>
-      <a href="/le-cabinet.php" class="btn btn-ghost" style="margin-top:10px;">Découvrir le cabinet</a>
+      <a href="/le-cabinet.html" class="btn btn-ghost" style="margin-top:10px;">Découvrir le cabinet</a>
     </div>
   </div>
 </section>
@@ -54,37 +62,37 @@ require __DIR__ . '/includes/header.php';
         <span class="num">01</span>
         <h3>Droit foncier &amp; immobilier</h3>
         <p>Immatriculation, litiges de terrain, baux, expropriation et articulation avec le droit coutumier.</p>
-        <a class="more" href="/competences.php#foncier">En savoir plus →</a>
+        <a class="more" href="/competences.html#foncier">En savoir plus →</a>
       </div>
       <div class="card">
         <span class="num">02</span>
         <h3>Droit des affaires</h3>
         <p>Création et vie des sociétés, contrats commerciaux, recouvrement de créances, contentieux OHADA.</p>
-        <a class="more" href="/competences.php#affaires">En savoir plus →</a>
+        <a class="more" href="/competences.html#affaires">En savoir plus →</a>
       </div>
       <div class="card">
         <span class="num">03</span>
         <h3>Droit de la famille</h3>
         <p>Divorce, autorité parentale, succession, actes d'état civil et médiation familiale.</p>
-        <a class="more" href="/competences.php#famille">En savoir plus →</a>
+        <a class="more" href="/competences.html#famille">En savoir plus →</a>
       </div>
       <div class="card">
         <span class="num">04</span>
         <h3>Droit pénal</h3>
         <p>Défense pénale, assistance en garde à vue, constitution de partie civile.</p>
-        <a class="more" href="/competences.php#penal">En savoir plus →</a>
+        <a class="more" href="/competences.html#penal">En savoir plus →</a>
       </div>
       <div class="card">
         <span class="num">05</span>
         <h3>Droit du travail</h3>
         <p>Contrats de travail, licenciement, contentieux prud'homal, conseil aux employeurs.</p>
-        <a class="more" href="/competences.php#travail">En savoir plus →</a>
+        <a class="more" href="/competences.html#travail">En savoir plus →</a>
       </div>
       <div class="card">
         <span class="num">06</span>
         <h3>Droit administratif</h3>
         <p>Recours contre l'administration, marchés publics, contentieux fiscal local.</p>
-        <a class="more" href="/competences.php#administratif">En savoir plus →</a>
+        <a class="more" href="/competences.html#administratif">En savoir plus →</a>
       </div>
     </div>
   </div>
@@ -115,7 +123,7 @@ require __DIR__ . '/includes/header.php';
 <section class="reveal">
   <div class="wrap">
     <div class="divider-seal">
-      <?php $class = 'mini-seal'; require __DIR__ . '/includes/seal.php'; ?>
+      <img class="mini-seal" src="/assets/img/seal.svg" alt="Sceau du Cabinet Maître TAWET">
       <div class="line"></div>
     </div>
     <div class="section-head">
@@ -127,19 +135,19 @@ require __DIR__ . '/includes/header.php';
         <div class="date">Juillet 2026</div>
         <h3>Nouvelles règles d'immatriculation foncière</h3>
         <p>Ce qui change pour les propriétaires de la région de l'Est et comment sécuriser votre titre foncier.</p>
-        <a class="more" href="/actualites.php">Lire l'article →</a>
+        <a class="more" href="/actualite.html?a=immatriculation-fonciere-2026">Lire l'article →</a>
       </div>
       <div class="news-card">
         <div class="date">Juin 2026</div>
         <h3>Créer sa société en zone OHADA</h3>
         <p>Les étapes essentielles pour formaliser une activité commerciale à Bertoua.</p>
-        <a class="more" href="/actualites.php">Lire l'article →</a>
+        <a class="more" href="/actualite.html?a=creer-societe-ohada">Lire l'article →</a>
       </div>
       <div class="news-card">
         <div class="date">Mai 2026</div>
         <h3>Médiation familiale : une alternative au procès</h3>
         <p>Pourquoi la médiation permet souvent de préserver les liens familiaux tout en réglant le litige.</p>
-        <a class="more" href="/actualites.php">Lire l'article →</a>
+        <a class="more" href="/actualite.html?a=mediation-familiale">Lire l'article →</a>
       </div>
     </div>
   </div>
@@ -151,10 +159,12 @@ require __DIR__ . '/includes/header.php';
     <h2 style="color:var(--paper);">Un dossier à confier au cabinet ?</h2>
     <p class="lead" style="margin:0 auto; color:rgba(243,238,230,0.8);">Prenez rendez-vous ou écrivez-nous directement — nous revenons vers vous sous 24h ouvrées.</p>
     <div class="cta-actions">
-      <a href="/rendez-vous.php" class="btn btn-primary">Prendre rendez-vous</a>
-      <a href="<?php require_once __DIR__.'/includes/config.php'; echo wa_link('Bonjour, je souhaite prendre contact avec le Cabinet Maître TAWET.'); ?>" target="_blank" rel="noopener" class="btn btn-outline-light">Écrire sur WhatsApp</a>
+      <a href="/rendez-vous.html" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="https://wa.me/237659502036?text=Bonjour%2C%20je%20souhaite%20prendre%20contact%20avec%20le%20Cabinet%20Ma%C3%AEtre%20TAWET." target="_blank" rel="noopener" class="btn btn-outline-light">Écrire sur WhatsApp</a>
     </div>
   </div>
 </section>
-
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<div data-site-footer></div>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

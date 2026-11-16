@@ -1,12 +1,20 @@
-<?php
-$pageTitle = 'Équipe';
-$pageDescription = "L'équipe du Cabinet Maître TAWET à Bertoua.";
-require __DIR__ . '/includes/header.php';
-?>
-
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Équipe — Cabinet Maître TAWET</title>
+<meta name="description" content="L'équipe du Cabinet Maître TAWET à Bertoua.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
 <section class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="/index.php">Accueil</a> / Équipe</div>
+    <div class="breadcrumb"><a href="/index.html">Accueil</a> / Équipe</div>
     <h1>Notre Équipe</h1>
     <p class="lead" style="color:rgba(243,238,230,0.75);">Une équipe restreinte, mobilisée sur chaque dossier avec la même rigueur.</p>
   </div>
@@ -15,7 +23,7 @@ require __DIR__ . '/includes/header.php';
 <section class="reveal">
   <div class="wrap attorney-block">
     <div class="attorney-photo">
-      <?php $class = 'seal-mini'; require __DIR__ . '/includes/seal.php'; ?>
+      <img class="seal-mini" src="/assets/img/seal.svg" alt="Sceau du Cabinet Maître TAWET">
     </div>
     <div>
       <div class="eyebrow">Avocate fondatrice</div>
@@ -82,10 +90,12 @@ require __DIR__ . '/includes/header.php';
   <div class="wrap">
     <h2>Discuter de votre dossier avec l'équipe</h2>
     <div class="cta-actions">
-      <a href="/rendez-vous.php" class="btn btn-primary">Prendre rendez-vous</a>
-      <a href="/contact.php" class="btn btn-ghost">Nous écrire</a>
+      <a href="/rendez-vous.html" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="/contact.html" class="btn btn-ghost">Nous écrire</a>
     </div>
   </div>
 </section>
-
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<div data-site-footer></div>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

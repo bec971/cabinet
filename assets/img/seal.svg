@@ -1,11 +1,4 @@
-<?php
-/**
- * Le Sceau — motif signature du cabinet.
- * $class détermine la taille via CSS (seal-mini, mini-seal, seal-stamp).
- */
-$class = $class ?? 'seal-mini';
-?>
-<svg class="<?php echo htmlspecialchars($class); ?>" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sceau du Cabinet Maître TAWET">
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sceau du Cabinet Maître TAWET">
   <circle cx="100" cy="100" r="96" fill="none" stroke="#A63A2E" stroke-width="3"/>
   <circle cx="100" cy="100" r="82" fill="none" stroke="#A63A2E" stroke-width="1"/>
   <path id="sealArcTop" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
