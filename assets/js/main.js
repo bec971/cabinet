@@ -57,11 +57,16 @@ function renderSharedLayout() {
     ['competences.html', 'Compétences'],
     ['equipe.html', 'Équipe'],
     ['actualites.html', 'Actualités'],
-    ['contact.html', 'Contact']
+    ['contact.html', 'Contact'],
+    ['rendez-vous.html', 'Prendre rendez-vous']
   ];
-  const links = navItems.map(([href, label]) =>
-    `<li><a href="${href}"${activeFile === href ? ' class="active" aria-current="page"' : ''}>${label}</a></li>`
-  ).join('');
+  const links = navItems.map(([href, label]) => {
+    const active = activeFile === href;
+    const classes = [active && 'active', href === 'rendez-vous.html' && 'nav-appointment btn btn-primary']
+      .filter(Boolean)
+      .join(' ');
+    return `<li><a href="${href}"${classes ? ` class="${classes}"` : ''}${active ? ' aria-current="page"' : ''}>${label}</a></li>`;
+  }).join('');
   const header = document.querySelector('[data-site-header]');
   const footer = document.querySelector('[data-site-footer]');
 
@@ -69,9 +74,10 @@ function renderSharedLayout() {
     header.outerHTML = `<header class="site-header"><div class="wrap">
       <a href="index.html" class="brand">${seal('seal-mini')}<span>${siteName}<small>Avocate au Barreau du Cameroun — Bertoua</small></span></a>
       <nav class="main-nav" aria-label="Navigation principale">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
         <ul id="main-menu">${links}</ul>
-        <a href="rendez-vous.html" class="btn btn-primary">Prendre rendez-vous</a>
       </nav>
     </div></header>`;
   }
@@ -92,9 +98,26 @@ function renderSharedLayout() {
   const toggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.main-nav ul');
   if (toggle && navList) {
-    toggle.addEventListener('click', () => {
-      const isOpen = navList.classList.toggle('open');
+    const setMenuOpen = (isOpen) => {
+      navList.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    };
+
+    toggle.addEventListener('click', () => {
+      setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    navList.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setMenuOpen(false);
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (!event.target.closest('.main-nav')) setMenuOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setMenuOpen(false);
+        toggle.focus();
+      }
     });
   }
 }
