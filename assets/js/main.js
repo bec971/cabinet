@@ -4,7 +4,7 @@ const articles = [
     date: 'Juillet 2026',
     title: "Nouvelles règles d'immatriculation foncière",
     summary: "Ce qui change pour les propriétaires de la région de l'Est et comment sécuriser votre titre foncier.",
-    image: '/assets/img/IMG-20260428-WA0041.jpg',
+    image: 'assets/img/IMG-20260428-WA0041.jpg',
     body: "L'immatriculation reste l'étape décisive pour sécuriser un droit de propriété au Cameroun. Plusieurs points de vigilance méritent d'être rappelés aux propriétaires de la région de l'Est : la constitution du dossier, le rôle de la commission consultative, et les recours possibles en cas de contestation par un tiers. Le cabinet accompagne les particuliers et les entreprises à chaque étape de cette procédure, de la constitution du dossier jusqu'à la délivrance du titre définitif."
   },
   {
@@ -12,7 +12,7 @@ const articles = [
     date: 'Juin 2026',
     title: 'Créer sa société en zone OHADA',
     summary: 'Les étapes essentielles pour formaliser une activité commerciale à Bertoua.',
-    image: '/assets/img/IMG-20260428-WA0042.jpg',
+    image: 'assets/img/IMG-20260428-WA0042.jpg',
     body: "Le droit OHADA encadre la création des sociétés commerciales dans l'ensemble de la zone, y compris au Cameroun. Choix de la forme sociale, rédaction des statuts, formalités auprès du Centre de Formalités des Entreprises : chaque étape conditionne la solidité juridique future de l'entreprise. Le cabinet conseille les commerçants et porteurs de projet de Bertoua sur l'ensemble de ce parcours."
   },
   {
@@ -20,7 +20,7 @@ const articles = [
     date: 'Mai 2026',
     title: 'Médiation familiale : une alternative au procès',
     summary: 'Pourquoi la médiation permet souvent de préserver les liens familiaux tout en réglant le litige.',
-    image: '/assets/img/IMG-20260428-WA0043.jpg',
+    image: 'assets/img/IMG-20260428-WA0043.jpg',
     body: "Avant d'engager une procédure contentieuse, la médiation familiale offre un cadre pour régler un désaccord — succession, garde d'enfants, partage de biens — tout en limitant les tensions durables entre les parties. Le cabinet propose systématiquement cette option lorsqu'elle est adaptée à la situation, avant d'envisager une saisine du tribunal."
   }
 ];
@@ -46,7 +46,7 @@ function escapeHTML(value) {
 }
 
 function seal(className) {
-  return `<img class="${className}" src="/assets/img/seal.svg" alt="Sceau du Cabinet Maître TAWET">`;
+  return `<img class="${className}" src="assets/img/seal.svg" alt="Sceau du Cabinet Maître TAWET">`;
 }
 
 function renderSharedLayout() {
@@ -60,18 +60,18 @@ function renderSharedLayout() {
     ['contact.html', 'Contact']
   ];
   const links = navItems.map(([href, label]) =>
-    `<li><a href="/${href}"${activeFile === href ? ' class="active" aria-current="page"' : ''}>${label}</a></li>`
+    `<li><a href="${href}"${activeFile === href ? ' class="active" aria-current="page"' : ''}>${label}</a></li>`
   ).join('');
   const header = document.querySelector('[data-site-header]');
   const footer = document.querySelector('[data-site-footer]');
 
   if (header) {
     header.outerHTML = `<header class="site-header"><div class="wrap">
-      <a href="/index.html" class="brand">${seal('seal-mini')}<span>${siteName}<small>Avocate au Barreau du Cameroun — Bertoua</small></span></a>
+      <a href="index.html" class="brand">${seal('seal-mini')}<span>${siteName}<small>Avocate au Barreau du Cameroun — Bertoua</small></span></a>
       <nav class="main-nav" aria-label="Navigation principale">
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
         <ul id="main-menu">${links}</ul>
-        <a href="/rendez-vous.html" class="btn btn-primary">Prendre rendez-vous</a>
+        <a href="rendez-vous.html" class="btn btn-primary">Prendre rendez-vous</a>
       </nav>
     </div></header>`;
   }
@@ -80,8 +80,8 @@ function renderSharedLayout() {
     footer.outerHTML = `<footer class="site-footer"><div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">${seal('seal-mini')}<p style="margin-top:16px;">Cabinet d'avocats généraliste, au service des particuliers et des entreprises à Bertoua et dans la région de l'Est.</p></div>
-        <div><h5>Navigation</h5><ul><li><a href="/le-cabinet.html">Le Cabinet</a></li><li><a href="/competences.html">Compétences</a></li><li><a href="/equipe.html">Équipe</a></li><li><a href="/actualites.html">Actualités</a></li></ul></div>
-        <div><h5>Compétences</h5><ul><li><a href="/competences.html#foncier">Droit foncier &amp; immobilier</a></li><li><a href="/competences.html#affaires">Droit des affaires</a></li><li><a href="/competences.html#famille">Droit de la famille</a></li><li><a href="/competences.html#penal">Droit pénal</a></li></ul></div>
+        <div><h5>Navigation</h5><ul><li><a href="le-cabinet.html">Le Cabinet</a></li><li><a href="competences.html">Compétences</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="actualites.html">Actualités</a></li></ul></div>
+        <div><h5>Compétences</h5><ul><li><a href="competences.html#foncier">Droit foncier &amp; immobilier</a></li><li><a href="competences.html#affaires">Droit des affaires</a></li><li><a href="competences.html#famille">Droit de la famille</a></li><li><a href="competences.html#penal">Droit pénal</a></li></ul></div>
         <div><h5>Contact</h5><ul><li><a href="mailto:${contactEmail}">${contactEmail}</a></li><li><a href="${whatsappBase}?text=Bonjour%2C%20je%20souhaite%20prendre%20contact%20avec%20le%20Cabinet%20Ma%C3%AEtre%20TAWET." target="_blank" rel="noopener">+237 659 502 036 (WhatsApp)</a></li><li>Bertoua, Région de l'Est, Cameroun</li></ul></div>
       </div>
       <div class="footer-bottom"><span>&copy; ${new Date().getFullYear()} ${siteName} — Tous droits réservés</span><span>Bertoua, Cameroun</span></div>
@@ -105,7 +105,7 @@ function renderNews() {
   list.innerHTML = articles.map((article) => `<article class="news-card">
     <div class="date">${escapeHTML(article.date)}</div><h3>${escapeHTML(article.title)}</h3>
     <p>${escapeHTML(article.summary)}</p>
-    <a class="more" href="/actualite.html?a=${encodeURIComponent(article.slug)}">Lire l'article →</a>
+    <a class="more" href="actualite.html?a=${encodeURIComponent(article.slug)}">Lire l'article →</a>
   </article>`).join('');
 }
 
@@ -116,7 +116,7 @@ function renderDomains() {
     <div class="wrap"><div class="divider-seal">${seal('mini-seal')}<div class="line"></div></div>
     <div class="eyebrow">${String(index + 1).padStart(2, '0')} / 06</div><h2>${escapeHTML(domain.title)}</h2>
     <p class="lead" style="max-width:70ch;">${escapeHTML(domain.text)}</p>
-    <a href="/rendez-vous.html?sujet=${encodeURIComponent(domain.title)}" class="btn btn-ghost" style="margin-top:10px;">Consulter pour ce domaine</a></div>
+    <a href="rendez-vous.html?sujet=${encodeURIComponent(domain.title)}" class="btn btn-ghost" style="margin-top:10px;">Consulter pour ce domaine</a></div>
   </section>`).join('');
 }
 
@@ -130,7 +130,7 @@ function renderArticle() {
   const description = document.querySelector('meta[name="description"]');
   if (description) description.content = article.summary;
   container.innerHTML = `<section class="page-hero"><div class="wrap">
-    <div class="breadcrumb"><a href="/index.html">Accueil</a> / <a href="/actualites.html">Actualités</a> / Article</div>
+    <div class="breadcrumb"><a href="index.html">Accueil</a> / <a href="actualites.html">Actualités</a> / Article</div>
     <div class="eyebrow" style="color:var(--brass-light);">${escapeHTML(article.date)}</div><h1>${escapeHTML(article.title)}</h1>
   </div></section>
   <section class="reveal"><div class="wrap" style="max-width:760px;">
@@ -140,7 +140,7 @@ function renderArticle() {
     <p style="font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase; color:var(--ink-soft);">${siteName} — Bertoua</p>
   </div></section>
   <section class="band-paper-dim reveal"><div class="wrap"><div class="section-head"><div class="eyebrow">À lire aussi</div><h2>Autres articles</h2></div>
-    <div class="news-grid">${related.map((item) => `<article class="news-card"><div class="date">${escapeHTML(item.date)}</div><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.summary)}</p><a class="more" href="/actualite.html?a=${encodeURIComponent(item.slug)}">Lire l'article →</a></article>`).join('')}</div>
+    <div class="news-grid">${related.map((item) => `<article class="news-card"><div class="date">${escapeHTML(item.date)}</div><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.summary)}</p><a class="more" href="actualite.html?a=${encodeURIComponent(item.slug)}">Lire l'article →</a></article>`).join('')}</div>
   </div></section>`;
 }
 
