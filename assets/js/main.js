@@ -146,25 +146,150 @@ function renderDomains() {
 function renderArticle() {
   const container = document.querySelector('[data-article-detail]');
   if (!container) return;
+
   const params = new URLSearchParams(location.search);
-  const article = articles.find((item) => item.slug === params.get('a')) || articles[0];
-  const related = articles.filter((item) => item.slug !== article.slug);
+  const requestedSlug = params.get('a');
+  const articleSlugs = new Set(articles.map((item) => item.slug));
+  const article = articleSlugs.has(requestedSlug)
+    ? articles.find((item) => item.slug === requestedSlug)
+    : null;
+
+  container.replaceChildren();
+
+  if (!article) {
+    document.title = `Article introuvable — ${siteName}`;
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.content = 'Article introuvable sur le site du Cabinet Maître TAWET.';
+
+    const hero = document.createElement('section');
+    hero.className = 'page-hero';
+    const wrap = document.createElement('div');
+    wrap.className = 'wrap';
+    const breadcrumb = document.createElement('div');
+    breadcrumb.className = 'breadcrumb';
+    const actualitesLink = document.createElement('a');
+    actualitesLink.href = 'actualites.html';
+    actualitesLink.textContent = 'Actualités';
+    breadcrumb.append(actualitesLink, document.createTextNode(' / Article'));
+    const heading = document.createElement('h1');
+    heading.textContent = 'Article introuvable';
+    wrap.append(breadcrumb, heading);
+    hero.append(wrap);
+
+    const section = document.createElement('section');
+    section.className = 'reveal';
+    const sectionWrap = document.createElement('div');
+    sectionWrap.className = 'wrap';
+    sectionWrap.style.maxWidth = '760px';
+    const homeLink = document.createElement('a');
+    homeLink.href = 'index.html';
+    homeLink.className = 'btn btn-primary';
+    homeLink.textContent = "Retour à l'accueil";
+    sectionWrap.append(homeLink);
+    section.append(sectionWrap);
+
+    container.append(hero, section);
+    return;
+  }
+
   document.title = `${article.title} — ${siteName}`;
   const description = document.querySelector('meta[name="description"]');
   if (description) description.content = article.summary;
-  container.innerHTML = `<section class="page-hero"><div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Accueil</a> / <a href="actualites.html">Actualités</a> / Article</div>
-    <div class="eyebrow" style="color:var(--brass-light);">${escapeHTML(article.date)}</div><h1>${escapeHTML(article.title)}</h1>
-  </div></section>
-  <section class="reveal"><div class="wrap" style="max-width:760px;">
-    <div class="article-hero-image"><img src="${article.image}" alt="${escapeHTML(article.title)}"></div>
-    <p class="lead">${escapeHTML(article.summary)}</p><p>${escapeHTML(article.body)}</p>
-    <div class="divider-seal" style="margin-top:50px;">${seal('mini-seal')}<div class="line"></div></div>
-    <p style="font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase; color:var(--ink-soft);">${siteName} — Bertoua</p>
-  </div></section>
-  <section class="band-paper-dim reveal"><div class="wrap"><div class="section-head"><div class="eyebrow">À lire aussi</div><h2>Autres articles</h2></div>
-    <div class="news-grid">${related.map((item) => `<article class="news-card"><div class="date">${escapeHTML(item.date)}</div><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.summary)}</p><a class="more" href="actualite.html?a=${encodeURIComponent(item.slug)}">Lire l'article →</a></article>`).join('')}</div>
-  </div></section>`;
+
+  const hero = document.createElement('section');
+  hero.className = 'page-hero';
+  const heroWrap = document.createElement('div');
+  heroWrap.className = 'wrap';
+  const breadcrumb = document.createElement('div');
+  breadcrumb.className = 'breadcrumb';
+  const homeLink = document.createElement('a');
+  homeLink.href = 'index.html';
+  homeLink.textContent = 'Accueil';
+  breadcrumb.append(homeLink, document.createTextNode(' / '));
+  const actualitesLink = document.createElement('a');
+  actualitesLink.href = 'actualites.html';
+  actualitesLink.textContent = 'Actualités';
+  breadcrumb.append(actualitesLink, document.createTextNode(' / Article'));
+  const eyebrow = document.createElement('div');
+  eyebrow.className = 'eyebrow';
+  eyebrow.style.color = 'var(--brass-light)';
+  eyebrow.textContent = article.date;
+  const heading = document.createElement('h1');
+  heading.textContent = article.title;
+  heroWrap.append(breadcrumb, eyebrow, heading);
+  hero.append(heroWrap);
+
+  const articleSection = document.createElement('section');
+  articleSection.className = 'reveal';
+  const articleWrap = document.createElement('div');
+  articleWrap.className = 'wrap';
+  articleWrap.style.maxWidth = '760px';
+  const imageWrap = document.createElement('div');
+  imageWrap.className = 'article-hero-image';
+  const image = document.createElement('img');
+  image.src = article.image;
+  image.alt = article.title;
+  imageWrap.append(image);
+  const summary = document.createElement('p');
+  summary.className = 'lead';
+  summary.textContent = article.summary;
+  const body = document.createElement('p');
+  body.textContent = article.body;
+  const separator = document.createElement('div');
+  separator.className = 'divider-seal';
+  separator.style.marginTop = '50px';
+  const sealImage = document.createElement('img');
+  sealImage.className = 'mini-seal';
+  sealImage.src = 'assets/img/seal.svg';
+  sealImage.alt = 'Sceau du Cabinet Maître TAWET';
+  const line = document.createElement('div');
+  line.className = 'line';
+  separator.append(sealImage, line);
+  const attribution = document.createElement('p');
+  attribution.style.fontFamily = 'var(--font-mono)';
+  attribution.style.fontSize = '12.5px';
+  attribution.style.textTransform = 'uppercase';
+  attribution.style.color = 'var(--ink-soft)';
+  attribution.textContent = `${siteName} — Bertoua`;
+  articleWrap.append(imageWrap, summary, body, separator, attribution);
+  articleSection.append(articleWrap);
+
+  const relatedSection = document.createElement('section');
+  relatedSection.className = 'band-paper-dim reveal';
+  const relatedWrap = document.createElement('div');
+  relatedWrap.className = 'wrap';
+  const sectionHead = document.createElement('div');
+  sectionHead.className = 'section-head';
+  const relatedEyebrow = document.createElement('div');
+  relatedEyebrow.className = 'eyebrow';
+  relatedEyebrow.textContent = 'À lire aussi';
+  const relatedHeading = document.createElement('h2');
+  relatedHeading.textContent = 'Autres articles';
+  sectionHead.append(relatedEyebrow, relatedHeading);
+  const newsGrid = document.createElement('div');
+  newsGrid.className = 'news-grid';
+
+  articles.filter((item) => item.slug !== article.slug).forEach((item) => {
+    const card = document.createElement('article');
+    card.className = 'news-card';
+    const date = document.createElement('div');
+    date.className = 'date';
+    date.textContent = item.date;
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+    const summaryText = document.createElement('p');
+    summaryText.textContent = item.summary;
+    const link = document.createElement('a');
+    link.className = 'more';
+    link.href = `actualite.html?a=${encodeURIComponent(item.slug)}`;
+    link.textContent = "Lire l'article →";
+    card.append(date, title, summaryText, link);
+    newsGrid.append(card);
+  });
+
+  relatedWrap.append(sectionHead, newsGrid);
+  relatedSection.append(relatedWrap);
+  container.append(hero, articleSection, relatedSection);
 }
 
 function setupContactForm() {
