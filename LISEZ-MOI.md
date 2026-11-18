@@ -16,7 +16,7 @@ Pour un essai local, démarrez un serveur statique depuis ce dossier, par exempl
 
 Le formulaire ne peut pas envoyer d'e-mail sans backend. Après validation, il ouvre WhatsApp avec le message prérempli; la personne doit confirmer l'envoi dans WhatsApp. Le numéro et l'adresse e-mail affichée se trouvent au début de `assets/js/main.js`.
 
-L'adresse configurée est actuellement `tchamgadaniel@gamil.com`. Vérifiez si `gamil.com` est bien voulu ou s'il faut le remplacer par `gmail.com` avant publication.
+L'adresse configurée est actuellement `tchamgadaniel@gmail.com`. Vérifiez que cette adresse est bien celle à publier avant mise en ligne.
 
 ## Contenu à personnaliser
 

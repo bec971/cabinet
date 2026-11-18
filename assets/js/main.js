@@ -36,7 +36,7 @@ const domains = [
 
 const siteName = 'Cabinet Maître TAWET';
 const whatsappNumber = '237659502036';
-const contactEmail = 'tchamgadaniel@gamil.com';
+const contactEmail = 'tchamgadaniel@gmail.com';
 const whatsappBase = `https://wa.me/${whatsappNumber}`;
 
 function escapeHTML(value) {
