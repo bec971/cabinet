@@ -2,7 +2,7 @@
 
 ## Contenu
 
-- Pages du site : `index.html`, `le-cabinet.html`, `competences.html`, `equipe.html`, `actualites.html`, `actualite.html`, `contact.html` et `rendez-vous.html`.
+- Pages du site : `index.html`, `le-cabinet.html`, `competences.html`, `equipe.html`, `actualites.html`, `actualite.html` et `contact.html`.
 - `assets/css/` contient les styles; `assets/js/main.js` gère la navigation, les actualités, les domaines et les formulaires.
 - `assets/img/` contient les images du site et le sceau SVG.
 

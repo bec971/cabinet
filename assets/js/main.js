@@ -57,12 +57,11 @@ function renderSharedLayout() {
     ['competences.html', 'Compétences'],
     ['equipe.html', 'Équipe'],
     ['actualites.html', 'Actualités'],
-    ['contact.html', 'Contact'],
-    ['rendez-vous.html', 'Prendre rendez-vous']
+    ['contact.html', 'Prendre rendez-vous']
   ];
   const links = navItems.map(([href, label]) => {
     const active = activeFile === href;
-    const classes = [active && 'active', href === 'rendez-vous.html' && 'nav-appointment btn btn-primary']
+    const classes = [active && 'active', href === 'contact.html' && 'nav-appointment btn btn-primary']
       .filter(Boolean)
       .join(' ');
     return `<li><a href="${href}"${classes ? ` class="${classes}"` : ''}${active ? ' aria-current="page"' : ''}>${label}</a></li>`;
@@ -139,7 +138,7 @@ function renderDomains() {
     <div class="wrap"><div class="divider-seal">${seal('mini-seal')}<div class="line"></div></div>
     <div class="eyebrow">${String(index + 1).padStart(2, '0')} / 06</div><h2>${escapeHTML(domain.title)}</h2>
     <p class="lead" style="max-width:70ch;">${escapeHTML(domain.text)}</p>
-    <a href="rendez-vous.html?sujet=${encodeURIComponent(domain.title)}" class="btn btn-ghost" style="margin-top:10px;">Consulter pour ce domaine</a></div>
+    <a href="contact.html?sujet=${encodeURIComponent(domain.title)}" class="btn btn-ghost" style="margin-top:10px;">Consulter pour ce domaine</a></div>
   </section>`).join('');
 }
 

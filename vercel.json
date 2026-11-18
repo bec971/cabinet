@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/rendez-vous.html",
+      "destination": "/contact.html",
+      "permanent": true
+    }
+  ]
+}
