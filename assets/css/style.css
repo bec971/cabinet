@@ -433,7 +433,7 @@ textarea { resize: vertical; min-height: 130px; }
 .map-frame { border: 1px solid var(--line); filter: grayscale(0.3) contrast(1.05); width: 100%; height: 380px; }
 
 /* Footer */
-.site-footer { background: var(--ink); color: var(--paper); padding: 70px 0 30px; }
+.site-footer { background: var(--ink); color: var(--paper); padding: 70px 0 110px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid var(--line-light); }
 .footer-grid h5 { font-family: var(--font-mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brass-light); margin-bottom: 18px; }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
