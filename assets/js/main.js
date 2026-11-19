@@ -85,7 +85,7 @@ function renderSharedLayout() {
     footer.outerHTML = `<footer class="site-footer"><div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">${seal('seal-mini')}<p style="margin-top:16px;">Cabinet d'avocats généraliste, au service des particuliers et des entreprises à Bertoua et dans la région de l'Est.</p></div>
-        <div><h5>Navigation</h5><ul><li><a href="le-cabinet.html">Le Cabinet</a></li><li><a href="competences.html">Compétences</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="actualites.html">Actualités</a></li></ul></div>
+        <div><h5>Navigation</h5><ul><li><a href="le-cabinet.html">Le Cabinet</a></li><li><a href="competences.html">Compétences</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="actualites.html">Actualités</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
         <div><h5>Compétences</h5><ul><li><a href="competences.html#foncier">Droit foncier &amp; immobilier</a></li><li><a href="competences.html#affaires">Droit des affaires</a></li><li><a href="competences.html#famille">Droit de la famille</a></li><li><a href="competences.html#penal">Droit pénal</a></li></ul></div>
         <div><h5>Contact</h5><ul><li><a href="mailto:${contactEmail}">${contactEmail}</a></li><li><a href="${whatsappBase}?text=Bonjour%2C%20je%20souhaite%20prendre%20contact%20avec%20le%20Cabinet%20Ma%C3%AEtre%20TAWET." target="_blank" rel="noopener">+237 659 502 036 (WhatsApp)</a></li><li>Bertoua, Région de l'Est, Cameroun</li></ul></div>
       </div>
