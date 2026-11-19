@@ -440,6 +440,7 @@ textarea { resize: vertical; min-height: 130px; }
 .footer-grid a { color: rgba(243,238,230,0.75); font-size: 0.93rem; }
 .footer-grid a:hover { color: var(--paper); }
 .footer-brand p { color: rgba(243,238,230,0.6); font-size: 0.9rem; max-width: 32ch; }
+.footer-brand .seal-mini { width: 64px; height: 64px; }
 .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; color: rgba(243,238,230,0.5); }
 
 /* WhatsApp floating button */
